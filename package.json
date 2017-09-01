@@ -1,0 +1,17 @@
+{
+  "name": "rails",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.4",
+    "fs": "0.0.1-security",
+    "underscore": "^1.8.3"
+  }
+}
