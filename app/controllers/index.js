@@ -1,3 +1,5 @@
-module.export = (req_, res_) => {
-	res_.send("oookkkk");
-};
+module.exports = (req_, res_) => {
+	this.func = () => {
+		console.log("ok");
+	}
+}
