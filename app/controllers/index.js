@@ -1,3 +1,3 @@
 module.exports = (req_, res_) => {
-	res_.send("index");
+	res_.render('index');
 }
