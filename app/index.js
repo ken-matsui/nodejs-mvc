@@ -6,38 +6,42 @@ const PORT = 8080;
 
 const APP = EXPRESS();
 
-// contrllerのファイル一覧を入れる(controllerの*.js)．
+// contrllerのファイル一覧を入れる(controllerの*.js)．(実行時処理)
 let aryControllFiles = [];
-let aryControllDatas = {};
-let numIndexLocation;
 FS.readdir("./controllers", (err_, files_) => {
 	if (err_) throw err_;
 	_.each(files_, (file_, index_) => {
 		aryControllFiles.push(file_.replace(".js", ""));
-		let _val = aryControllFiles[index_];
-		if(_val == "index") {
-			numIndexLocation = index_;
-		}
 	});
 });
 
+// jsファイルの呼び出し．
+function callJs(dir_, req_, res_) {
+	const _responce = require(dir_);
+	_responce(req_, res_);
+};
 
-// ドキュメントルートにリクエストがあった場合の処理
+// dir_はControllerのDirectoryだけ教えろという意味．
+function callController(url_, files_, dir_, req_, res_) {
+	const _RETURN = _.some(files_, file_ => {
+		if(url_[1] == file_) {
+			callJs(`${dir_}/${file_}`, req_, res_);
+			return true;
+		} else if(url_[1] == "") {
+			callJs(dir_ + "/index", req_, res_);
+			return true;
+		}
+		return false;
+	});
+	if(_RETURN == false) {
+		callJs(dir_ + "/404", req_, res_);
+	}
+};
+
+// GETリクエストがあった場合の処理
 APP.get("/*", (req_, res_) => {
 	let _url = req_.url.split("/");
-	console.log(_url);
-	// req_のURLを取得して，/の後ろが8行目で作った配列の中身と一致していたらそのモジュールを実行する．
-	_.each(aryControllFiles, (file_, index_) => {
-		if(_url[1] == file_) {
-			var Movie = require(`./controllers/${file_}`);
-			Movie(req_, res_);
-		} else if(_url[1] == "") {
-			// あとで
-		} else {
-			// 404を返す
-			res_.send("404");
-		}
-	});
+	callController(_url, aryControllFiles, "./controllers", req_, res_);
 });
 
 APP.listen(PORT, () => {
