@@ -89,3 +89,6 @@ Automatically generated file.
 
 ### [package.json](./package.json)
 Package management file.
+
+## License
+### [MIT](./LICENSE)
