@@ -21,7 +21,7 @@ $ node index.js
 
 ```
 .
-|- app -- assets -- images -- background.jpg
+|- app -- assets -- images -- background.png
 |      |         |_ stylesheets -- index.css
 |      |
 |      |- controllers -- index.js
@@ -43,34 +43,38 @@ Here, all of the static files are included.
 ##### [images](./app/assets/images/)
 Here, all of the image files are included.
 
-###### [background.jpg](./app/assets/images/background.jpg)
+###### [background.png](./app/assets/images/background.png)
 This file is an image to use in HTML.
 
-##### stylesheets
+##### [stylesheets](./app/assets/stylesheets/)
 Here, all of the stylesheet files are included.
 
-###### index.css
+###### [index.css](./app/assets/stylesheets/index.css)
 This file is a stylesheet to use in HTML.
 
-#### controllers
+#### [controllers](./app/controllers/)
 Here, all of the javascript files are included.
 
-##### index.js
+##### [index.js](./app/controllers/index.js)
 This file is a javascript file that calls HTML.
 
-#### views
+#### [views](./app/views/)
 Here, all of the Jade files are included.
 
-##### index.jade
+##### [index.jade](./app/views/index.jade)
 This file is converted to HTML Jade file.
 
-#### index.js
+#### [index.js](./app/index.js)
 This file supervises the controllers.
 
-### .gitignore
+### [.gitignore](./.gitignore)
 A file specifying a file to be ignored in git.
 
-### README.md
+### [README.md](./README.md)
 This file.
 
-### 
+### [package-lock.json](./package-lock.json)
+Automatically generated file.
+
+### [package.json](./package.json)
+Package management file.
