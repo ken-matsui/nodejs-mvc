@@ -17,6 +17,8 @@ Run within the app direcotry.
 $ node index.js
 ```
 
+GET and POST requestable.
+
 ## Directory
 
 ```
