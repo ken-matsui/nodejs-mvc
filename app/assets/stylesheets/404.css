@@ -1,26 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Lato:400,700);
-@import url(http://fonts.googleapis.com/earlyaccess/notosansjp.css);
-
-body {
-    width: 100vw;
-    height: 55vw;
-    display: table-cell;
-    vertical-align: middle;
-    text-align: center;
-    font-family: Lato, 
-                "Noto Sans JP",
-                "游ゴシック Medium",
-                "游ゴシック体",
-                "Yu Gothic Medium",
-                YuGothic,
-                "ヒラギノ角ゴ ProN",
-                "Hiragino Kaku Gothic ProN",
-                "メイリオ",
-                Meiryo,
-                "ＭＳ Ｐゴシック",
-                "MS PGothic",
-                sans-serif;
-}
+@import url(./style.css);
 
 h1 {
     color: #5522FF;
@@ -32,31 +10,4 @@ h1 {
 h2 {
     color: #333333;
     font-size: 30px;
-}
-
-h3 {
-    color: #000;
-    font-size: 20px;
-}
-
-.button {
-  position: relative;
-  background-color: #1ABC9C;
-  border-radius: 10px;
-  color: #FFF;
-  font-size: 20px;
-  width: 130px;
-  height: 50px;
-  -webkit-transition: none;
-  transition: none;
-  box-shadow: 0 3px 0 #0E8C73;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, .3);
-}
-.button:hover {
-  background-color: #31C8AA;
-  box-shadow: 0 3px 0 #23A188;
-}
-.button:active {
-  top: 3px;
-  box-shadow: none;
 }
