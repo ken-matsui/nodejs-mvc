@@ -42,40 +42,40 @@ GET and POST requestable.
 ### [app](./app/)
 Here, all of the application files are included.
 
-#### [assets](./app/assets/)
+### [assets](./app/assets/)
 Here, all of the static files are included.
 
-##### [images](./app/assets/images/)
+### [images](./app/assets/images/)
 Here, all of the image files are included.
 
-###### [background.png](./app/assets/images/background.png)
+### [background.png](./app/assets/images/background.png)
 This file is an image to use in HTML.
 
-##### [stylesheets](./app/assets/stylesheets/)
+### [stylesheets](./app/assets/stylesheets/)
 Here, all of the stylesheet files are included.
 
-###### [index.css](./app/assets/stylesheets/index.css)
+### [index.css](./app/assets/stylesheets/index.css)
 This file is a stylesheet to use in HTML.
 
-###### [style.css](./app/assets/stylesheets/style.css)
+### [style.css](./app/assets/stylesheets/style.css)
 This file is a file of the intersection of css.
 
-#### [controllers](./app/controllers/)
+### [controllers](./app/controllers/)
 Here, all of the javascript files are included.
 
-##### [index.js](./app/controllers/index.js)
+### [index.js](./app/controllers/index.js)
 This file is a javascript file that calls HTML.
 
-#### [views](./app/views/)
+### [views](./app/views/)
 Here, all of the Jade files are included.
 
-##### [index.jade](./app/views/index.jade)
+### [index.jade](./app/views/index.jade)
 This file is converted to HTML Jade file.
 
-##### [style.jade](./app/view/style.jade)
+### [style.jade](./app/view/style.jade)
 This file is a file of the intersection of Jade.
 
-#### [index.js](./app/index.js)
+### [index.js](./app/index.js)
 This file supervises the controllers.
 
 ### [.gitignore](./.gitignore)
