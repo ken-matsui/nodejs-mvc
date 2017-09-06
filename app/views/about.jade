@@ -1,11 +1,13 @@
-doctype html
-html(lang="ja")
-	head
-		meta(charset='utf-8')
-		link(rel='stylesheet', href='/stylesheets/about.css')
-		title home
-	body
-		h1.text about
-		input.button(type="button", onClick="location.href='/'" value="home")
-		h3 ↑
-		h2 Location is about.
+extends ./style.jade
+
+block title
+	title about
+
+block link
+	link(rel='stylesheet', href='/stylesheets/about.css')
+
+block body
+	h1.text about
+	input.button(type="button", onClick="location.href='/'" value="home")
+	h3 ↑
+	h2 Location is about.

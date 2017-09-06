@@ -1,11 +1,13 @@
-doctype html
-html(lang="ja")
-	head
-		meta(charset='utf-8')
-		link(rel='stylesheet', href='/stylesheets/404.css')
-		title 404 not found
-	body
-		h1.text 404
-		h2 Where are you?
-		h3 ↓
-		input.button(type="button", onClick="location.href='/'" value="home")
+extends ./style.jade
+
+block title
+	title 404
+
+block link
+	link(rel='stylesheet', href='/stylesheets/404.css')
+
+block body
+	h1.text 404
+	h2 Where are you?
+	h3 ↓
+	input.button(type="button", onClick="location.href='/'" value="home")
