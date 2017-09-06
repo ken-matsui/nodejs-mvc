@@ -25,9 +25,12 @@ GET and POST requestable.
 .
 |- app -- assets -- images -- background.png
 |      |         |_ stylesheets -- index.css
+|      |                        |_ style.css
 |      |
 |      |- controllers -- index.js
 |      |- views -- index.jade
+|      |        |_ style.jade
+|      |
 |      |_ index.js
 |
 |- .gitignore
@@ -54,6 +57,9 @@ Here, all of the stylesheet files are included.
 ###### [index.css](./app/assets/stylesheets/index.css)
 This file is a stylesheet to use in HTML.
 
+###### [style.css](./app/assets/stylesheets/style.css)
+This file is a file of the intersection of css.
+
 #### [controllers](./app/controllers/)
 Here, all of the javascript files are included.
 
@@ -65,6 +71,9 @@ Here, all of the Jade files are included.
 
 ##### [index.jade](./app/views/index.jade)
 This file is converted to HTML Jade file.
+
+##### [style.jade](./app/view/style.jade)
+This file is a file of the intersection of Jade.
 
 #### [index.js](./app/index.js)
 This file supervises the controllers.
