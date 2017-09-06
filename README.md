@@ -81,6 +81,9 @@ This file supervises the controllers.
 ### [.gitignore](./.gitignore)
 A file specifying a file to be ignored in git.
 
+### [LICENSE](./LICENSE)
+This file is license of MIT.
+
 ### [README.md](./README.md)
 This file.
 
