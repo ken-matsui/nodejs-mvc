@@ -34,6 +34,7 @@ GET and POST requestable.
 |      |_ index.js
 |
 |- .gitignore
+|- LICENSE
 |- README.md
 |- package-lock.json
 |_ package.json
