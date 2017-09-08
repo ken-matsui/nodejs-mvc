@@ -6,7 +6,7 @@ const _ = require('underscore');
 
 const PORT = 8080;
 // appをカレントとしたときのcontrollerのディレクトリ
-const CONT_LOCAT = './controllers';
+const CONT_DIR = './controllers';
 
 const APP = EXPRESS();
 
@@ -54,12 +54,12 @@ function callController(files_, dir_, req_, res_, method_) {
 
 // GETリクエストがあった場合の処理
 APP.get('/*', (req_, res_) => {
-	callController(aryControllFiles, CONT_LOCAT, req_, res_, 'GET');
+	callController(aryControllFiles, CONT_DIR, req_, res_, 'GET');
 });
 
 // POSTリクエストがあった場合の処理
 APP.post('/*', (req_, res_) => {
-	callController(aryControllFiles, CONT_LOCAT, req_, res_, 'POST');
+	callController(aryControllFiles, CONT_DIR, req_, res_, 'POST');
 });
 
 APP.listen(PORT, () => {
