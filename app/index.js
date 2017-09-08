@@ -5,6 +5,8 @@ const BODY_PARSER = require('body-parser');
 const _ = require('underscore');
 
 const PORT = 8080;
+// appをカレントとしたときのcontrollerのディレクトリ
+const CONT_LOCAT = './controllers';
 
 const APP = EXPRESS();
 
@@ -26,37 +28,38 @@ FS.readdir('./controllers', (err_, files_) => {
 });
 
 // jsファイルの呼び出し．
-function callJs(dir_, req_, res_) {
+function callJs(dir_, req_, res_, method_) {
 	const _responce = require(dir_);
-	_responce(req_, res_);
+	_responce(req_, res_, method_);
 };
 
 // dir_はControllerのDirectoryだけ教えろという意味．
-function callController(url_, files_, dir_, req_, res_) {
+function callController(files_, dir_, req_, res_, method_) {
+	const _URL = req_.url.split('/');
+
 	const _RETURN = _.some(files_, file_ => {
-		if(url_[1] == file_) {
-			callJs(`${dir_}/${file_}`, req_, res_);
+		if(_URL[1] == file_) {
+			callJs(`${dir_}/${file_}`, req_, res_, method_);
 			return true;
-		} else if(url_[1] == "") {
-			callJs(dir_ + '/index', req_, res_);
+		} else if(_URL[1] == "") {
+			callJs(dir_ + '/index', req_, res_, method_);
 			return true;
 		}
 		return false;
 	});
 	if(_RETURN == false) {
-		callJs(dir_ + '/404', req_, res_);
+		callJs(dir_ + '/404', req_, res_, method_);
 	}
 };
 
 // GETリクエストがあった場合の処理
 APP.get('/*', (req_, res_) => {
-	let _url = req_.url.split("/");
-	callController(_url, aryControllFiles, './controllers', req_, res_);
+	callController(aryControllFiles, CONT_LOCAT, req_, res_, 'GET');
 });
 
 // POSTリクエストがあった場合の処理
 APP.post('/*', (req_, res_) => {
-	res_.json(req_.body);
+	callController(aryControllFiles, CONT_LOCAT, req_, res_, 'POST');
 });
 
 APP.listen(PORT, () => {
