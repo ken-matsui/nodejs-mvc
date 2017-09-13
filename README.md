@@ -95,4 +95,4 @@ Automatically generated file.
 Package management file.
 
 ## License
-### [MIT](./LICENSE)
+### MIT
