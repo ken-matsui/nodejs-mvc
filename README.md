@@ -1,4 +1,4 @@
-# node-template
+# node-mvc_template
 
 This template built MVC with Node.js.
 
@@ -95,4 +95,4 @@ Automatically generated file.
 Package management file.
 
 ## License
-### MIT
+MIT
